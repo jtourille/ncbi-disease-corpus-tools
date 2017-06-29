@@ -1,4 +1,6 @@
 import argparse
+import logging
+import os
 
 from ncbitools.conll import convert_to_conll
 
@@ -21,5 +23,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.subparser_name == "CONVERT":
+
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+
+        logging.info("Converting file: {}".format(os.path.abspath(args.input_file)))
+        logging.info("* Target file: {}".format(os.path.abspath(args.output_file)))
+        logging.info("* CoreNLP server address: {}".format(args.corenlp_url))
 
         convert_to_conll(args.input_file, args.output_file, args.corenlp_url)
