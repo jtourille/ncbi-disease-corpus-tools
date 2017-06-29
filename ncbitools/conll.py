@@ -1,6 +1,5 @@
 import os
 import re
-from collections import defaultdict
 
 import requests
 
@@ -42,12 +41,6 @@ def convert_to_conll(input_corpus_file, output_conll_file, corenlp_url):
                     "tokens": list()
                 })
 
-    categories = defaultdict(int)
-
-    for k, v in instances.items():
-        for ann in v["annotations"]:
-            categories[ann["entity"]] += 1
-
     with open(os.path.abspath(output_conll_file), "w", encoding="UTF-8") as output_file:
         for pmid, content in instances.items():
 
@@ -75,6 +68,7 @@ def convert_to_conll(input_corpus_file, output_conll_file, corenlp_url):
 
                         elif annotation["begin"] <= token["characterOffsetBegin"] < token["characterOffsetEnd"] \
                                 <= annotation["end"]:
+
                             annotation["tokens"].append((sentence["index"], token["index"]))
 
                 for token in sentence["tokens"]:
