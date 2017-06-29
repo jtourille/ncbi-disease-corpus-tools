@@ -33,6 +33,6 @@ python main.py CONVERT --input_file original-data/NCBIdevelopset_corpus.txt \
     --corenlp_url http://localhost:9000
     
 python main.py CONVERT --input_file original-data/NCBItestset_corpus.txt \
-    --output_file ./train.conll \
+    --output_file ./test.conll \
     --corenlp_url http://localhost:9000
 ```
