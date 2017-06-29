@@ -12,7 +12,7 @@ Characteristics of the tabulated files:
 * Three columns per line separated by tabulations: *token*, *part-of-speech tag*, *label*
 * Labels follow the IOB format: a token can be the beginning of a disease mention (B-Disease), inside a disease mention (I-Disease) or outside a disease mention (O)
 
-## 2. How to use this tool
+## 2. Usage
 
 General requirements:
 * You must have a working [Python](https://www.python.org/) environment. Required libraries are mentioned in the `requirements.txt` file
