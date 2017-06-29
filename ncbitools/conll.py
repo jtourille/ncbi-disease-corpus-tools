@@ -83,11 +83,9 @@ def convert_to_conll(input_corpus_file, output_conll_file, corenlp_url):
                             else:
                                 label = "I-Disease"
 
-                    line_str = "{}\t{}\t{}\t{}\t{}\n".format(
+                    line_str = "{}\t{}\t{}\n".format(
                         token["originalText"],
                         token["pos"],
-                        token["characterOffsetBegin"],
-                        token["characterOffsetEnd"],
                         label
                     )
                     output_file.write(line_str)
